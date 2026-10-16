@@ -1,0 +1,369 @@
+=== model_creation.py ===
+Model Accuracy: 98.00%
+
+=== hands_on_starter.py ===
+=== Factory Machine Monitoring System ===
+Machines: 5 | Rounds: 10 | Total readings: 50
+
+
+=================================================================
+ROUND 01
+=================================================================
+
+M1 | Readings: {'temperature': 55.5, 'pressure': 3.93, 'vibration': 39.6, 'current': 17.3}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M2 | Readings: {'temperature': 83.0, 'pressure': 2.47, 'vibration': 26.1, 'current': 11.5}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M3 | Readings: {'temperature': 66.4, 'pressure': 2.02, 'vibration': 19.2, 'current': 15.5}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M4 | Readings: {'temperature': 87.3, 'pressure': 4.33, 'vibration': 30.3, 'current': 15.2}
+Rule: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+M5 | Readings: {'temperature': 60.2, 'pressure': 1.74, 'vibration': 45.0, 'current': 16.4}
+Rule: EXCESSIVE_VIBRATION
+Action: NOTICE: Vibration levels erratic. Dispatched maintenance log to system engineering dashboard.
+
+--- ROUND 01 PRIORITY REPORT ---
+Immediate attention: M4
+Reason: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+Machine ranking:
+1. M4 - HIGH_TEMP (severity 3)
+2. M5 - EXCESSIVE_VIBRATION (severity 1)
+3. M1 - NO_RULE_FIRED (severity 0)
+4. M2 - NO_RULE_FIRED (severity 0)
+5. M3 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 02
+=================================================================
+
+M1 | Readings: {'temperature': 121.82004427628203, 'pressure': 10.790842861581778, 'vibration': 106.04880646535956, 'current': 48.77917848506457}
+Rule: CRITICAL_OVERLOAD
+Action:  EMERGENCY: Combined Thermal & Electrical Overload! Tripping main circuit breakers.
+
+M2 | Readings: {'temperature': 94.7, 'pressure': 2.93, 'vibration': 43.2, 'current': 17.3}
+Rule: CRITICAL_OVERLOAD
+Action:  EMERGENCY: Combined Thermal & Electrical Overload! Tripping main circuit breakers.
+
+M3 | Readings: {'temperature': 67.6, 'pressure': 1.87, 'vibration': 21.0, 'current': 13.2}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M4 | Readings: {'temperature': 52.6, 'pressure': 3.83, 'vibration': 25.3, 'current': 10.9}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M5 | Readings: {'temperature': 90.5, 'pressure': 4.25, 'vibration': 36.6, 'current': 13.8}
+Rule: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+--- ROUND 02 PRIORITY REPORT ---
+Immediate attention: M1
+Reason: CRITICAL_OVERLOAD
+Action:  EMERGENCY: Combined Thermal & Electrical Overload! Tripping main circuit breakers.
+
+Machine ranking:
+1. M1 - CRITICAL_OVERLOAD (severity 4)
+2. M2 - CRITICAL_OVERLOAD (severity 4)
+3. M5 - HIGH_TEMP (severity 3)
+4. M3 - NO_RULE_FIRED (severity 0)
+5. M4 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 03
+=================================================================
+
+M1 | Readings: {'temperature': 90.0, 'pressure': 4.09, 'vibration': 36.4, 'current': 8.7}
+Rule: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+M2 | Readings: {'temperature': 67.8, 'pressure': 2.89, 'vibration': 22.5, 'current': 17.4}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M3 | Readings: {'temperature': 74.7, 'pressure': 3.08, 'vibration': 15.6, 'current': 12.1}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M4 | Readings: {'temperature': 74.5, 'pressure': 1.53, 'vibration': 15.3, 'current': 16.4}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M5 | Readings: {'temperature': 89.2, 'pressure': 2.85, 'vibration': 32.1, 'current': 6.3}
+Rule: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+--- ROUND 03 PRIORITY REPORT ---
+Immediate attention: M1
+Reason: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+Machine ranking:
+1. M1 - HIGH_TEMP (severity 3)
+2. M5 - HIGH_TEMP (severity 3)
+3. M2 - NO_RULE_FIRED (severity 0)
+4. M3 - NO_RULE_FIRED (severity 0)
+5. M4 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 04
+=================================================================
+
+M1 | Readings: {'temperature': 64.0, 'pressure': 2.2, 'vibration': 41.5, 'current': 10.8}
+Rule: EXCESSIVE_VIBRATION
+Action: NOTICE: Vibration levels erratic. Dispatched maintenance log to system engineering dashboard.
+
+M2 | Readings: {'temperature': None, 'pressure': None, 'vibration': None, 'current': None}
+Rule: SENSOR_DROPOUT_DETECTED
+Action:  ERROR: Sensor data unavailable or corrupted. Holding current operational state.
+
+M3 | Readings: {'temperature': 75.0, 'pressure': 3.93, 'vibration': 44.9, 'current': 10.8}
+Rule: EXCESSIVE_VIBRATION
+Action: NOTICE: Vibration levels erratic. Dispatched maintenance log to system engineering dashboard.
+
+M4 | Readings: {'temperature': 64.0, 'pressure': 2.96, 'vibration': 29.8, 'current': 15.1}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M5 | Readings: {'temperature': 77.1, 'pressure': 2.02, 'vibration': 31.1, 'current': 17.0}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+--- ROUND 04 PRIORITY REPORT ---
+Immediate attention: M2
+Reason: SENSOR_DROPOUT_DETECTED
+Action:  ERROR: Sensor data unavailable or corrupted. Holding current operational state.
+
+Machine ranking:
+1. M2 - SENSOR_DROPOUT_DETECTED (severity 3)
+2. M1 - EXCESSIVE_VIBRATION (severity 1)
+3. M3 - EXCESSIVE_VIBRATION (severity 1)
+4. M4 - NO_RULE_FIRED (severity 0)
+5. M5 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 05
+=================================================================
+
+M1 | Readings: {'temperature': 50.9, 'pressure': 3.79, 'vibration': 39.7, 'current': 9.0}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M2 | Readings: {'temperature': 75.3, 'pressure': 1.87, 'vibration': 35.6, 'current': 14.6}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M3 | Readings: {'temperature': 79.9, 'pressure': 1.77, 'vibration': 12.2, 'current': 10.9}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M4 | Readings: {'temperature': 78.7, 'pressure': 1.69, 'vibration': 37.4, 'current': 11.2}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M5 | Readings: {'temperature': 51.0, 'pressure': 3.3, 'vibration': 26.6, 'current': 17.6}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+--- ROUND 05 PRIORITY REPORT ---
+No rule triggered. All machines appear normal.
+
+Machine ranking:
+1. M1 - NO_RULE_FIRED (severity 0)
+2. M2 - NO_RULE_FIRED (severity 0)
+3. M3 - NO_RULE_FIRED (severity 0)
+4. M4 - NO_RULE_FIRED (severity 0)
+5. M5 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 06
+=================================================================
+
+M1 | Readings: {'temperature': 65.1, 'pressure': 3.81, 'vibration': 34.9, 'current': 12.8}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M2 | Readings: {'temperature': None, 'pressure': None, 'vibration': None, 'current': None}
+Rule: SENSOR_DROPOUT_DETECTED
+Action:  ERROR: Sensor data unavailable or corrupted. Holding current operational state.
+
+M3 | Readings: {'temperature': 73.3, 'pressure': 4.41, 'vibration': 43.2, 'current': 8.9}
+Rule: HIGH_PRESSURE
+Action:  WARNING: Pressure threshold exceeded. Opening auxiliary pressure relief vent.
+
+M4 | Readings: {'temperature': 50.3, 'pressure': 2.71, 'vibration': 36.4, 'current': 11.7}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M5 | Readings: {'temperature': None, 'pressure': None, 'vibration': None, 'current': None}
+Rule: SENSOR_DROPOUT_DETECTED
+Action:  ERROR: Sensor data unavailable or corrupted. Holding current operational state.
+
+--- ROUND 06 PRIORITY REPORT ---
+Immediate attention: M2
+Reason: SENSOR_DROPOUT_DETECTED
+Action:  ERROR: Sensor data unavailable or corrupted. Holding current operational state.
+
+Machine ranking:
+1. M2 - SENSOR_DROPOUT_DETECTED (severity 3)
+2. M5 - SENSOR_DROPOUT_DETECTED (severity 3)
+3. M3 - HIGH_PRESSURE (severity 2)
+4. M1 - NO_RULE_FIRED (severity 0)
+5. M4 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 07
+=================================================================
+
+M1 | Readings: {'temperature': 50.9, 'pressure': 2.51, 'vibration': 35.4, 'current': 17.7}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M2 | Readings: {'temperature': 76.1, 'pressure': 2.74, 'vibration': 12.5, 'current': 13.6}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M3 | Readings: {'temperature': 75.0, 'pressure': 3.9, 'vibration': 20.8, 'current': 10.7}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M4 | Readings: {'temperature': 69.8, 'pressure': 1.78, 'vibration': 41.5, 'current': 14.3}
+Rule: EXCESSIVE_VIBRATION
+Action: NOTICE: Vibration levels erratic. Dispatched maintenance log to system engineering dashboard.
+
+M5 | Readings: {'temperature': 54.1, 'pressure': 3.76, 'vibration': 39.5, 'current': 10.9}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+--- ROUND 07 PRIORITY REPORT ---
+Immediate attention: M4
+Reason: EXCESSIVE_VIBRATION
+Action: NOTICE: Vibration levels erratic. Dispatched maintenance log to system engineering dashboard.
+
+Machine ranking:
+1. M4 - EXCESSIVE_VIBRATION (severity 1)
+2. M1 - NO_RULE_FIRED (severity 0)
+3. M2 - NO_RULE_FIRED (severity 0)
+4. M3 - NO_RULE_FIRED (severity 0)
+5. M5 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 08
+=================================================================
+
+M1 | Readings: {'temperature': 93.6, 'pressure': 4.43, 'vibration': 26.8, 'current': 11.9}
+Rule: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+M2 | Readings: {'temperature': 92.5, 'pressure': 2.46, 'vibration': 19.5, 'current': 10.0}
+Rule: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+M3 | Readings: {'temperature': None, 'pressure': None, 'vibration': None, 'current': None}
+Rule: SENSOR_DROPOUT_DETECTED
+Action:  ERROR: Sensor data unavailable or corrupted. Holding current operational state.
+
+M4 | Readings: {'temperature': 77.8, 'pressure': 4.03, 'vibration': 22.6, 'current': 17.7}
+Rule: HIGH_PRESSURE
+Action:  WARNING: Pressure threshold exceeded. Opening auxiliary pressure relief vent.
+
+M5 | Readings: {'temperature': 71.8, 'pressure': 2.59, 'vibration': 28.3, 'current': 11.2}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+--- ROUND 08 PRIORITY REPORT ---
+Immediate attention: M1
+Reason: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+Machine ranking:
+1. M1 - HIGH_TEMP (severity 3)
+2. M2 - HIGH_TEMP (severity 3)
+3. M3 - SENSOR_DROPOUT_DETECTED (severity 3)
+4. M4 - HIGH_PRESSURE (severity 2)
+5. M5 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 09
+=================================================================
+
+M1 | Readings: {'temperature': 61.4, 'pressure': 3.53, 'vibration': 21.0, 'current': 13.7}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M2 | Readings: {'temperature': 92.5, 'pressure': 3.34, 'vibration': 22.2, 'current': 17.5}
+Rule: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+M3 | Readings: {'temperature': 71.2, 'pressure': 2.4, 'vibration': 28.6, 'current': 5.3}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M4 | Readings: {'temperature': 52.3, 'pressure': 2.25, 'vibration': 12.9, 'current': 9.6}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M5 | Readings: {'temperature': 93.7, 'pressure': 4.32, 'vibration': 44.4, 'current': 9.6}
+Rule: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+--- ROUND 09 PRIORITY REPORT ---
+Immediate attention: M2
+Reason: HIGH_TEMP
+Action: CRITICAL: High temperature detected! Shutting down core drive motor immediately.
+
+Machine ranking:
+1. M2 - HIGH_TEMP (severity 3)
+2. M5 - HIGH_TEMP (severity 3)
+3. M1 - NO_RULE_FIRED (severity 0)
+4. M3 - NO_RULE_FIRED (severity 0)
+5. M4 - NO_RULE_FIRED (severity 0)
+
+=================================================================
+ROUND 10
+=================================================================
+
+M1 | Readings: {'temperature': 72.7, 'pressure': 1.57, 'vibration': 26.9, 'current': 8.2}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+M2 | Readings: {'temperature': 75.8, 'pressure': 1.87, 'vibration': 42.1, 'current': 15.9}
+Rule: EXCESSIVE_VIBRATION
+Action: NOTICE: Vibration levels erratic. Dispatched maintenance log to system engineering dashboard.
+
+M3 | Readings: {'temperature': 84.3, 'pressure': 4.37, 'vibration': 16.8, 'current': 12.0}
+Rule: HIGH_PRESSURE
+Action:  WARNING: Pressure threshold exceeded. Opening auxiliary pressure relief vent.
+
+M4 | Readings: {'temperature': 56.2, 'pressure': 4.11, 'vibration': 19.0, 'current': 17.2}
+Rule: HIGH_PRESSURE
+Action:  WARNING: Pressure threshold exceeded. Opening auxiliary pressure relief vent.
+
+M5 | Readings: {'temperature': 80.7, 'pressure': 3.76, 'vibration': 12.6, 'current': 5.1}
+Rule: NO_RULE_FIRED
+Action:  Normal Operations: System metrics stable within nominal safety limits.
+
+--- ROUND 10 PRIORITY REPORT ---
+Immediate attention: M3
+Reason: HIGH_PRESSURE
+Action:  WARNING: Pressure threshold exceeded. Opening auxiliary pressure relief vent.
+
+Machine ranking:
+1. M3 - HIGH_PRESSURE (severity 2)
+2. M4 - HIGH_PRESSURE (severity 2)
+3. M2 - EXCESSIVE_VIBRATION (severity 1)
+4. M1 - NO_RULE_FIRED (severity 0)
+5. M5 - NO_RULE_FIRED (severity 0)
+
+=== Monitoring Complete ===
+Total sensor readings generated: 50
+Decisions saved in day1_log.txt
