@@ -1,0 +1,46 @@
+Dataset: 150 labelled readings | model 5-fold CV accuracy 92% (no-torque degraded model 91%) | spoof-check false-alarm rate on history 0.0%
+
+ARM-01  SAFE                  <- Healthy arm, clean notes
+          - model LOW (p=0.00)
+
+ARM-02  MONITOR               <- Sensors fine, technician hears a squeak
+          - notes MINOR: wrist: squeak
+          - model LOW (p=0.00)
+
+ARM-03  SCHEDULE_MAINTENANCE  <- Elbow clearly worn, no notes
+          - model HIGH (p=0.97)
+
+ARM-04  EMERGENCY_STOP        <- One shoulder torque spike over hard limit
+          - HARD SAFETY LIMIT crossed: shoulder[11]: torque 175.0 N·m > limit 156.0 N·m
+
+ARM-05  EMERGENCY_STOP        <- Elbow worn + 'burning smell / grinding' notes
+          - notes SEVERE: elbow: burning smell, elbow: grinding, elbow: noise, elbow: hot
+          - model HIGH (p=0.97)
+
+ARM-06  EMERGENCY_STOP        <- SPOOFED elbow torque (hides worn joint)
+          - model HIGH (p=0.97) [degraded: torque ignored]
+          - SPOOF suspected on elbow
+          - other signals corroborate a real problem -> STOP
+          - [elbow] cross-sensor mismatch: torque 36 % but temp/vibration imply ~83 % (z=-6.0)
+
+ARM-07  SCHEDULE_MAINTENANCE  <- Frozen wrist torque, nothing else wrong
+          - model LOW (p=0.00) [degraded: torque ignored]
+          - SPOOF suspected on wrist
+          - no corroboration -> inspect sensor
+          - [wrist] flatline: torque has no sensor noise (frozen/injected value)
+
+ARM-08  MONITOR               <- Healthy arm but model service is down
+          - model unavailable (RuntimeError) - running on notes only
+
+Safety independence check: ARM-04 still -> EMERGENCY_STOP with model=None and spoof detector=None.
+
+Outcomes demonstrated: SAFE, MONITOR, SCHEDULE_MAINTENANCE, EMERGENCY_STOP
+
+Spoofed-torque attack test (elbow joint, true state = worn, ~90 % torque):
+  attack                                              caught?
+  Frozen value (flatline at 35 %)                     YES
+  Replay of a recorded 10-sample window               YES
+  Sudden drop mid-window (hide a fault)               YES
+  Noisy fake value, far from truth (35 %)             YES
+  Noisy fake, only modestly low (true -10 %)          NO  (known limitation)
+  Coherent fake: torque+temp+vibration all forged     NO  (known limitation)

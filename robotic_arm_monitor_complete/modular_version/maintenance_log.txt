@@ -1,0 +1,15 @@
+# Maintenance log - free text written by technicians.
+# Format: YYYY-MM-DD HH:MM | ARM-xx | joint | note
+2026-10-13 08:10 | ARM-01 | elbow    | Routine inspection done. No grinding noise, no leaks, joint feels normal.
+2026-10-13 09:30 | ARM-01 | general  | Cleaned the safety fence glass and restocked the pallet area.
+2026-10-12 14:05 | ARM-02 | wrist    | Slight squeak at the wrist at the start of each cycle, otherwise fine.
+2026-10-12 10:45 | ARM-03 | general  | Replaced the coffee machine in the break room next to cell 3.
+2026-10-11 16:20 | ARM-03 | shoulder | Touched up paint on the shoulder housing after the line audit.
+2026-10-13 11:15 | ARM-05 | elbow    | Burning smell near the elbow and a grinding noise when it rotates.
+2026-10-13 11:40 | ARM-05 | elbow    | Elbow housing hot to touch after 30 min of running.
+2026-10-12 13:00 | ARM-06 | general  | Updated the cell signage and re-labelled the emergency stop button.
+2026-10-10 07:50 | ARM-07 | general  | Tool changer calibrated, gripper fingers replaced. All normal.
+2026-10-13 15:25 | ARM-08 | wrist    | Operator reported nothing unusual during the night shift.
+2026-09-01 09:00 | ARM-04 | shoulder | Heard grinding at the shoulder; bearing re-greased, issue resolved.
+2026-10-09 12:00 | ARM-04 | general  | Scheduled the quarterly software backup for next week.
+this line is malformed and is ignored by the parser
